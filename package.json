@@ -1,0 +1,16 @@
+{
+  "name": "gcj-js-template",
+  "version": "0.1.0",
+  "description": "Google Code Jam template for NodeJS.",
+  "author": "Sam Men Wee",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/mwsam/gcj-js-template.git"
+  },
+  "bugs": "https://github.com/mwsam/gcj-js-template/issues",
+  "homepage": "https://github.com/mwsam/gcj-js-template",
+  "dependencies": {
+    "underscore": "~1.8.2"
+  }
+}
