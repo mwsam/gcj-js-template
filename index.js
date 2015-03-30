@@ -45,13 +45,14 @@ var Input = function (string) {
       len = strings.length;
 
   var toNumber = function (obj) {
-    console.assert(_.isFinite(+obj));
+    console.assert(_.isFinite(+obj),
+                   'Cannot convert "' + obj + '" into number.');
 
     return +obj;
   };
 
   this.nextString = function () {
-    console.assert(idx < len);
+    console.assert(idx < len, 'No more input.');
 
     return strings[idx++];
   };
