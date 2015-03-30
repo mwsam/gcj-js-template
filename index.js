@@ -33,38 +33,39 @@ var main = function (input) {
       id,
 
       // Put parameters needed by test case here.
-      input.next()
+      input.nextString()
     );
   }
 };
 
 var Input = function (string) {
   var idx = 0,
+      space = /\s+/,
       strings = string.split('\n'),
       len = strings.length;
 
   var toNumber = function (obj) {
-    console.assert(_.isFinite(obj));
+    console.assert(_.isFinite(+obj));
 
     return +obj;
   };
 
-  this.next = function () {
+  this.nextString = function () {
     console.assert(idx < len);
 
     return strings[idx++];
   };
 
+  this.nextStringArray = function (sep) {
+    return this.nextString().split(sep || space);
+  };
+
   this.nextNumber = function () {
-    return toNumber(this.next());
+    return toNumber(this.nextString());
   };
 
-  this.nextNumbers = function (sep) {
-    return this.nextArray(sep).map(toNumber);
-  };
-
-  this.nextArray = function (sep) {
-    return this.next().split(sep || /\s+/);
+  this.nextNumberArray = function (sep) {
+    return this.nextStringArray(sep).map(toNumber);
   };
 };
 
