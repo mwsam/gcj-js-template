@@ -15,13 +15,12 @@ var _ = require('underscore');
 /**
  * Solve a test case.
  *
- * @param {number} id ID of test case.
  * @param {...*} args Parameters needed by test case.
  */
-var solve = function (id) {
+var solve = function () {
   var res;
 
-  console.log('Case #' + id + ': ' + res);
+  return res;
 };
 
 var main = function (input) {
@@ -29,12 +28,10 @@ var main = function (input) {
       numTests = input.nextNumber();
 
   for (id = 1; id <= numTests; ++id) {
-    solve(
-      id,
-
+    console.log('Case #' + id + ': ' + solve(
       // Put parameters needed by test case here.
       input.nextString()
-    );
+    ));
   }
 };
 
