@@ -1,11 +1,12 @@
 /**
  * @fileOverview Google Code Jam template for NodeJS.
  *
- * How to run this script:
+ * How to run:
  *
  * 1. Install NodeJS (https://nodejs.org)
- * 2. npm install underscore
- * 3. node index.js < data.in > data.out
+ * 2. Go to the directory of this source
+ * 3. Run `npm install --production`
+ * 4. Run `node index.js < data.in > data.out`
  */
 
 'use strict';
