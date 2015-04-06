@@ -2,8 +2,8 @@
 
 var path = require('path');
 
-var gulp = require('gulp'),
-    zip = require('gulp-zip');
+var gulp = require('gulp');
+var zip = require('gulp-zip');
 
 gulp.task('default', function () {
   return gulp.src(['index.js', 'package.json'])

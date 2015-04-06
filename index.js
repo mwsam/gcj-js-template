@@ -25,8 +25,8 @@ var solve = function () {
 };
 
 var main = function (input) {
-  var id,
-      numTests = input.nextNumber();
+  var id;
+  var numTests = input.nextNumber();
 
   for (id = 1; id <= numTests; ++id) {
     console.log('Case #' + id + ': ' + solve(
@@ -37,10 +37,10 @@ var main = function (input) {
 };
 
 var Input = function (string) {
-  var idx = 0,
-      space = /\s+/,
-      strings = string.split('\n'),
-      len = strings.length;
+  var idx = 0;
+  var space = /\s+/;
+  var strings = string.split('\n');
+  var len = strings.length;
 
   var toNumber = function (obj) {
     console.assert(_.isFinite(+obj),
