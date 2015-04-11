@@ -13,7 +13,9 @@
   },
   "homepage": "https://github.com/mwsam/gcj-js-template",
   "dependencies": {
-    "underscore": "~1.8.2"
+    "mathjs": "~1.5.2",
+    "underscore": "~1.8.2",
+    "underscore.string": "~3.0.3"
   },
   "devDependencies": {
     "gulp": "~3.8.11",
