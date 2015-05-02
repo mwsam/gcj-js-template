@@ -13,6 +13,7 @@
   },
   "homepage": "https://github.com/mwsam/gcj-js-template",
   "dependencies": {
+    "debug": "~2.1.3",
     "mathjs": "~1.5.2",
     "underscore": "~1.8.2",
     "underscore.string": "~3.0.3"

@@ -13,12 +13,17 @@
 
 var _ = require('underscore');
 
+var debug = require('debug');
+var debugArgs = debug('args');
+
 /**
  * Solve a test case.
  *
  * @param {...*} args Parameters needed by test case.
  */
 var solve = function () {
+  debugArgs(arguments);
+
   var res;
 
   return res;
