@@ -37,10 +37,13 @@ var main = function (input) {
 };
 
 var Input = function (string) {
-  var idx = 0;
+  var items = null;
+  var itemsIdx = 0;
+  var itemsLen = 0;
   var space = /\s+/;
   var strings = string.split('\n');
-  var len = strings.length;
+  var stringsIdx = 0;
+  var stringsLen = strings.length;
 
   var toNumber = function (obj) {
     console.assert(_.isFinite(+obj),
@@ -50,13 +53,26 @@ var Input = function (string) {
   };
 
   this.nextString = function () {
-    console.assert(idx < len, 'No more input.');
+    console.assert(stringsIdx < stringsLen, 'No more input.');
+    console.assert(!items || itemsIdx === itemsLen,
+                   'Unread array items:', items);
 
-    return strings[idx++];
+    items = null;
+    return strings[stringsIdx++];
   };
 
   this.nextStringArray = function (sep) {
     return this.nextString().split(sep || space);
+  };
+
+  this.nextStringItem = function (sep) {
+    if (!items || itemsIdx >= itemsLen) {
+      items = this.nextStringArray(sep);
+      itemsIdx = 0;
+      itemsLen = items.length;
+    }
+
+    return items[itemsIdx++];
   };
 
   this.nextNumber = function () {
@@ -65,6 +81,10 @@ var Input = function (string) {
 
   this.nextNumberArray = function (sep) {
     return this.nextStringArray(sep).map(toNumber);
+  };
+
+  this.nextNumberItem = function (sep) {
+    return toNumber(this.nextStringItem(sep));
   };
 };
 
